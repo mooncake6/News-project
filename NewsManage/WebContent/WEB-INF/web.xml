@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+		<display-name>innerLogin</display-name>
+		<servlet-name>innerLogin</servlet-name>
+		<servlet-class>servlet.InnerLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>innerLogin</servlet-name>
+		<url-pattern>/InnerLogin</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>newspublish</display-name>
+		<servlet-name>newspublish</servlet-name>
+		<servlet-class>servlet.NewsPublishServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>newspublish</servlet-name>
+		<url-pattern>/NewsPublish</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<display-name>newssearch</display-name>
+		<servlet-name>newssearch</servlet-name>
+		<servlet-class>servlet.NewsSearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>newssearch</servlet-name>
+		<url-pattern>/NewsSearch</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>filter.LoginFilter</filter-class>
+		<init-param>
+			<param-name>passUrl</param-name>
+			<param-value>login.jsp;InnerLogin</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>
